@@ -28,15 +28,39 @@ const Auth = ({ authRoute }) => {
     );
 
   return (
-    <div className="landing">
-      <div className="dark-overlay">
-        <div className="landing-inner">
-          <h1>MyCourse</h1>
-          <h4>Keep track of what you are learning</h4>
-          {body}
-        </div>
+    <div class="2xl:container h-screen m-auto landing">
+      <div hidden class="fixed inset-0 w-7/12 lg:block">
+        <span class="absolute left-6 bottom-6 text-sm">
+          Video by MART PRODUCTION from
+          <a href="https://www.pexels.com/" target="blank" title="Pexels">
+            Pexels
+          </a>
+        </span>
       </div>
+      <div
+        hidden
+        role="hidden"
+        class="
+          fixed
+          inset-0
+          w-6/12
+          ml-auto
+          bg-white bg-opacity-70
+          backdrop-blur-xl
+          lg:block
+        "
+      ></div>
+      {body}
     </div>
+    // <div className="landing">
+    //   <div className="dark-overlay">
+    //     <div className="landing-inner">
+    //       <h1>MyCourse</h1>
+    //       <h4>Keep track of what you are learning</h4>
+    //       {body}
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 

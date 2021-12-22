@@ -3,6 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import content from "../../content";
 import useWindowPosition from "../../hook/useWindowPosition";
+import imageWeb from "../../assets/web.png";
 
 export default function Work() {
   const animated = useWindowPosition("header", 0.6);
@@ -68,12 +69,8 @@ const ProjectDetail = () => {
           animated ? "" : "translate-y-10 opacity-0"
         } transform transition duration-2000  px-20 py-3 m-4 bg-black flex justify-around text-white rounded-lg shadow-2xl`}
       >
-        <img
-          src="https://timo.engineer/assets/icons/rocket.svg"
-          alt="rocket"
-          className="mr-5"
-        />
-        <p className="text-lg">Website</p>
+        <img src={imageWeb} alt="rocket" className="mr-4 h-10 w-10" />
+        <p className="text-lg text-center pt-1">Website</p>
       </button>
     </div>
   );

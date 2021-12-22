@@ -85,10 +85,10 @@ const AddPostModal = () => {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant='secondary' onClick={closeDialog}>
-						Cancel
+						CANCEL
 					</Button>
 					<Button variant='primary' type='submit'>
-						LearnIt!
+						ADD
 					</Button>
 				</Modal.Footer>
 			</Form>

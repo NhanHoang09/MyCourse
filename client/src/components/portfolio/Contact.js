@@ -25,9 +25,9 @@ export default function Contact() {
           placeholderSrc={content.contact.imgPlaceholder}
           alt="profile"
           width="300px"
-          className="mt-10 transtion duration-2000 ease-in-out mx-auto"
+          className="mt-10 transition duration-2000 ease-in-out mx-auto shadow-sm rounded-xl"
         />
-        <div className="font-dosis w-4/5 md:w-2/5 mt-5 transtion duration-2000">
+        <div className="font-dosis w-4/5 md:w-2/5 mt-5 transition duration-2000">
           <h1
             className={`${
               animated ? "" : "translate-y-10 opacity-0"
