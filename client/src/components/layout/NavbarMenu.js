@@ -18,35 +18,28 @@ const NavbarMenu = () => {
   const logout = () => logoutUser();
 
   return (
-    <Navbar expand="lg" bg="primary" variant="dark" className="shadow">
-      <Navbar.Brand className="font-weight-bolder text-white">
-        <img
-          src={learnItLogo}
-          alt="learnItLogo"
-          width="32"
-          height="32"
-          className="mr-2"
-        />
-        MyCourse
+    <Navbar expand="lg" bg="info" variant="dark" className="shadow pt-1 pb-1">
+      <Navbar.Brand className=" text-white mr-0">
+        <img src={learnItLogo} alt="learnItLogo" width="32" height="32" />
       </Navbar.Brand>
-
+      <span className="font-weight-bolder text-white ">MyCourse</span>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link
-            className="font-weight-bolder text-white"
+            className="font-weight-bolder text-white home"
             to="/dashboard"
             as={Link}
           >
-            Dashboard
+            Home
           </Nav.Link>
           <Nav.Link
-            className="font-weight-bolder text-white"
+            className="font-weight-bolder text-white about"
             to="/about"
             as={Link}
           >
-            About Me
+            About
           </Nav.Link>
         </Nav>
 
@@ -55,18 +48,11 @@ const NavbarMenu = () => {
             Hi {username}
           </Nav.Link>
           <Button
-            variant="secondary"
-            className="font-weight-bolder text-white"
+            variant="dark"
+            className="font-weight-bolder text-white "
             onClick={logout}
           >
-            <img
-              src={logoutIcon}
-              alt="logoutIcon"
-              width="32"
-              height="32"
-              className="mr-2"
-            />
-            Logout
+            <img src={logoutIcon} alt="logoutIcon" width="24" height="24" />
           </Button>
         </Nav>
       </Navbar.Collapse>
