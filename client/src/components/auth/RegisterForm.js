@@ -1,10 +1,9 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import AlertMessage from "../layout/AlertMessage";
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
 
 const RegisterForm = () => {
   // Context
@@ -16,6 +15,15 @@ const RegisterForm = () => {
     password: "",
     confirmPassword: "",
   });
+  //validate form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const handleClickRegister = (data) => {
+    console.log(data);
+  };
 
   const [alert, setAlert] = useState(null);
 
@@ -27,7 +35,7 @@ const RegisterForm = () => {
       [event.target.name]: event.target.value,
     });
 
-  const register = async (event) => {
+  const RegisterForm = async (event) => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -50,7 +58,7 @@ const RegisterForm = () => {
   return (
     <FormContainer>
       <h2>Register</h2>
-      <form onSubmit={register}>
+      <form onSubmit={RegisterForm}>
         <AlertMessage info={alert} />
         <div className="txt_field">
           <input
@@ -59,6 +67,11 @@ const RegisterForm = () => {
             required
             value={username}
             onChange={onChangeRegisterForm}
+            {...register("username", {
+              required: true,
+              maxLength: 20,
+              pattern: /^[A-Za-z]+$/i,
+            })}
           />
           <span></span>
           <label htmlFor="">Username</label>
@@ -90,7 +103,13 @@ const RegisterForm = () => {
         <div className="signup_link">
           Already an account?
           <Link to="/login">
-            <button className="ml-2"> login</button>
+            <button
+              onClick={handleSubmit(handleClickRegister)}
+              className="ml-2"
+            >
+              {" "}
+              login
+            </button>
           </Link>
         </div>
       </form>

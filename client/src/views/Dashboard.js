@@ -55,7 +55,7 @@ const Dashboard = () => {
               variant="primary"
               onClick={setShowAddPostModal.bind(this, true)}
             >
-              Learn Now!
+              Learn now!
             </Button>
           </Card.Body>
         </Card>
